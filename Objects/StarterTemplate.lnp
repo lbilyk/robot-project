@@ -32,6 +32,7 @@
 ".\objects\utilities.o"
 ".\objects\encodersystem.o"
 ".\objects\dcmotorsystem.o"
+".\objects\lcd.o"
 --strict --scatter ".\Objects\StarterTemplate.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
