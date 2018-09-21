@@ -382,11 +382,6 @@
           <GroupName>Source Group 1</GroupName>
           <Files>
             <File>
-              <FileName>main.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\main.cpp</FilePath>
-            </File>
-            <File>
               <FileName>SysTick.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\SysTick.cpp</FilePath>
@@ -707,19 +702,19 @@
               <FilePath>.\EncoderSystem.h</FilePath>
             </File>
             <File>
-              <FileName>DCMotorSystem.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\DCMotorSystem.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>DCMotorSystem.h</FileName>
+              <FileName>DCmotors.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\DCMotorSystem.h</FilePath>
+              <FilePath>.\DCmotors.h</FilePath>
             </File>
             <File>
-              <FileName>lcd.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\lcd.c</FilePath>
+              <FileName>DCMotors.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\DCMotors.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>main.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\main.cpp</FilePath>
             </File>
           </Files>
         </Group>
