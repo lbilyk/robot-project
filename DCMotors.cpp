@@ -24,14 +24,15 @@ int motorControl(int speed,int dir){
   TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
   TIM_OCInitTypeDef  TIM_OCInitStructure;
 	
-	int direction[4][2]= {{ //forward
-													0x1,0x1,},
+	int direction[5][2]= {{ //forward
+													0x2,0x1,},
 													//reverse
-												{ 0x2,0x2},
-													//right
 												{ 0x1,0x2},
+													//right
+												{ 0x1,0x1},
 													//left
-												{ 0x2,0x1}};
+												{ 0x2,0x2},
+												{0x0, 0x0}};
 	
 		 /* GPIOA Configuration: Pins 8 and 9 as alternate function push-pull */
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8 | GPIO_Pin_9;
@@ -90,6 +91,8 @@ int motorControl(int speed,int dir){
 	/* TIM1 Main Output Enable */
   TIM_CtrlPWMOutputs(TIM1, ENABLE);
 	
+	GPIOA->BSRR = direction[dir][0];
+	GPIOB->BSRR = direction[dir][1];
 
 	return 0;
 }

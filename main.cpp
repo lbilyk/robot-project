@@ -4,10 +4,14 @@ extern void systemInit();
 
 int main(void)
 {
-	int speed = 8;
-	int direction = 0;
+	
+	int speed = 9; //at least 7
+	int direction =1; //forward:0 || reverse:1 || right:2 || left:3 || stop:4 
 	
 	motorInit();
-	motorControl(speed,direction);
+ 
+		motorControl(speed, direction);
+	
+
 	
 }

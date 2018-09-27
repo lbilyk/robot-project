@@ -1120,7 +1120,7 @@ I (stm32f30x_wwdg.h)(0x5A79BF54)
 I (stm32f30x_misc.h)(0x5A79BF54)
 F (.\EncoderSystem.h)(0x5B9B47EC)()
 F (.\DCmotors.h)(0x5BA4F417)()
-F (.\DCMotors.cpp)(0x5BA4F8B2)(-xc++ -std=c++14 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil/ARM/PACK/ARM/CMSIS/5.2.0/CMSIS/Include-ID:/Keil/ARM/PACK/Keil/STM32F3xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F303xE-o ./objects/dcmotors_1.o -MD)
+F (.\DCMotors.cpp)(0x5BA51AD6)(-xc++ -std=c++14 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil/ARM/PACK/ARM/CMSIS/5.2.0/CMSIS/Include-ID:/Keil/ARM/PACK/Keil/STM32F3xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F303xE-o ./objects/dcmotors_1.o -MD)
 I (stm32f30x.h)(0x5B9B2880)
 I (D:\Keil\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include\core_cm4.h)(0x5A0E12CA)
 I (D:\Keil\ARM\ARMCLANG\include\libcxx\stdint.h)(0x57EA67CE)
@@ -1157,7 +1157,7 @@ I (stm32f30x_tim.h)(0x5A79BF54)
 I (stm32f30x_usart.h)(0x5A79BF54)
 I (stm32f30x_wwdg.h)(0x5A79BF54)
 I (stm32f30x_misc.h)(0x5A79BF54)
-F (.\main.cpp)(0x5BA4F77E)(-xc++ -std=c++14 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil/ARM/PACK/ARM/CMSIS/5.2.0/CMSIS/Include-ID:/Keil/ARM/PACK/Keil/STM32F3xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F303xE-o ./objects/main.o -MD)
+F (.\main.cpp)(0x5BAD3BB6)(-xc++ -std=c++14 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil/ARM/PACK/ARM/CMSIS/5.2.0/CMSIS/Include-ID:/Keil/ARM/PACK/Keil/STM32F3xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F303xE-o ./objects/main.o -MD)
 I (main.h)(0x5BA4F426)
 I (stm32f30x.h)(0x5B9B2880)
 I (D:\Keil\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include\core_cm4.h)(0x5A0E12CA)
@@ -1203,3 +1203,4 @@ I (D:\Keil\ARM\ARMCLANG\include\string.h)(0x588D66A2)
 I (D:\Keil\ARM\ARMCLANG\include\libcxx\stdlib.h)(0x563F0286)
 I (D:\Keil\ARM\ARMCLANG\include\stdlib.h)(0x588D66AA)
 I (DCmotors.h)(0x5BA4F417)
+F (.\stepper.cpp)(0x5BAD1DC3)(-xc++ -std=c++14 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-ID:/Keil/ARM/PACK/ARM/CMSIS/5.2.0/CMSIS/Include-ID:/Keil/ARM/PACK/Keil/STM32F3xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F303xE-o ./objects/stepper.o -MD)
