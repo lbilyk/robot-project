@@ -8,12 +8,13 @@
 #include "main.h"
 //#include "stm32f30x.h"
 #include <string.h>
-/*
+#include "stm32f3xx_hal.h"
+
 bool HasFlag(uint32_t, uint32_t);
 bool IsStrEqual(char*, const char*, int);
 void SetLEDState(bool ON);
 bool GetLEDState();
 void LEDToggle();
 void LEDInit();
-*/
+
 #endif //ROBOT_PROJECT_UTILITIES_H
