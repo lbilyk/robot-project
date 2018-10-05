@@ -10,9 +10,9 @@
       <TargetName>Target 1</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pArmCC>6070000::V6.7::.\ARMCLANG</pArmCC>
-      <pCCUsed>6070000::V6.7::.\ARMCLANG</pCCUsed>
-      <uAC6>1</uAC6>
+      <pArmCC>5060750::V5.06 update 6 (build 750)::ARMCC</pArmCC>
+      <pCCUsed>5060750::V5.06 update 6 (build 750)::ARMCC</pCCUsed>
+      <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>STM32F303RETx</Device>
@@ -185,6 +185,7 @@
             <hadXRAM>0</hadXRAM>
             <uocXRam>0</uocXRam>
             <RvdsVP>2</RvdsVP>
+            <RvdsMve>0</RvdsMve>
             <hadIRAM2>0</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
@@ -312,7 +313,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>7</Optim>
+            <Optim>1</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -321,10 +322,11 @@
             <PlainCh>0</PlainCh>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
-            <wLevel>3</wLevel>
+            <wLevel>2</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>1</uC99>
+            <uGnu>0</uGnu>
             <useXO>0</useXO>
             <v6Lang>3</v6Lang>
             <v6LangP>6</v6LangP>
@@ -720,6 +722,16 @@
               <FileName>stepper.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\stepper.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>LCD_display.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\LCD_display.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>LCD_display.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\LCD_display.h</FilePath>
             </File>
           </Files>
         </Group>

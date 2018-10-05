@@ -1,1 +1,1 @@
-./objects/stepper.o: stepper.cpp
+.\objects\stepper.o: stepper.cpp

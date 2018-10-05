@@ -30,9 +30,10 @@
 ".\objects\usartsystem.o"
 ".\objects\utilities.o"
 ".\objects\encodersystem.o"
-".\objects\dcmotors_1.o"
+".\objects\dcmotors.o"
 ".\objects\main.o"
 ".\objects\stepper.o"
+".\objects\lcd_display.o"
 --strict --scatter ".\Objects\StarterTemplate.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
