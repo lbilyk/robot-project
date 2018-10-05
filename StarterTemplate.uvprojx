@@ -382,74 +382,9 @@
           <GroupName>Source Group 1</GroupName>
           <Files>
             <File>
-              <FileName>SysTick.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\SysTick.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>SysTick.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\SysTick.h</FilePath>
-            </File>
-            <File>
-              <FileName>Utilities.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Utilities.h</FilePath>
-            </File>
-            <File>
               <FileName>stm32f30x.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\stm32f30x.h</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f30x_adc.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\stm32f30x_adc.h</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f30x_adc.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\stm32f30x_adc.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f30x_can.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\stm32f30x_can.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f30x_comp.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\stm32f30x_comp.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f30x_crc.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\stm32f30x_crc.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f30x_dac.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\stm32f30x_dac.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f30x_dbgmcu.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\stm32f30x_dbgmcu.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f30x_dma.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\stm32f30x_dma.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f30x_exti.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\stm32f30x_exti.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f30x_flash.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\stm32f30x_flash.cpp</FilePath>
             </File>
             <File>
               <FileName>stm32f30x_fmc.cpp</FileName>
@@ -672,34 +607,9 @@
               <FilePath>.\startup_stm32f303xe.s</FilePath>
             </File>
             <File>
-              <FileName>USARTSystem.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\USARTSystem.h</FilePath>
-            </File>
-            <File>
-              <FileName>USARTSystem.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\USARTSystem.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Utilities.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\Utilities.cpp</FilePath>
-            </File>
-            <File>
               <FileName>main.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\main.h</FilePath>
-            </File>
-            <File>
-              <FileName>EncoderSystem.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\EncoderSystem.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>EncoderSystem.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\EncoderSystem.h</FilePath>
             </File>
             <File>
               <FileName>DCmotors.h</FileName>
@@ -720,6 +630,26 @@
               <FileName>stepper.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\stepper.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>SysTick.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\SysTick.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>SysTick.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\SysTick.h</FilePath>
+            </File>
+            <File>
+              <FileName>LCD_dispay.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\LCD_dispay.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>LCD_display.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\LCD_display.h</FilePath>
             </File>
           </Files>
         </Group>

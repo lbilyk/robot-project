@@ -3,6 +3,7 @@
 
 
 void motorInit(){
+	GPIO_InitTypeDef GPIO_InitStructure;
 	
 	// GPIOA Clocks enable
 	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA | RCC_AHBPeriph_GPIOB, ENABLE);
@@ -12,30 +13,9 @@ void motorInit(){
 		
 	//TIM1 clock enable 
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM1 , ENABLE);
-
-  return;
-
-}
-
-int motorControl(int speed,int dir){
-	  uint16_t TimerPeriod = 0;
-  uint16_t Channel1Pulse = 0, Channel2Pulse = 0;
-	GPIO_InitTypeDef GPIO_InitStructure;
-  TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
-  TIM_OCInitTypeDef  TIM_OCInitStructure;
 	
-	int direction[5][2]= {{ //forward
-													0x2,0x1,},
-													//reverse
-												{ 0x1,0x2},
-													//right
-												{ 0x1,0x1},
-													//left
-												{ 0x2,0x2},
-												{0x0, 0x0}};
-	
-		 /* GPIOA Configuration: Pins 8 and 9 as alternate function push-pull */
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8 | GPIO_Pin_9;
+			 /* GPIOA Configuration: Pins 8 and 9 as alternate function push-pull */
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8 | GPIO_Pin_9 |GPIO_Pin_10 | GPIO_Pin_11  ;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
@@ -57,10 +37,34 @@ int motorControl(int speed,int dir){
   GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
   GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
   GPIO_Init(GPIOB, &GPIO_InitStructure);
+
+  return;
+
+}
+
+int motorControl(int speed,int dir){
+	  uint16_t TimerPeriod = 0;
+  uint16_t Channel1Pulse = 0, Channel2Pulse = 0, Channel3Pulse = 0;
+	GPIO_InitTypeDef GPIO_InitStructure;
+  TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
+  TIM_OCInitTypeDef  TIM_OCInitStructure;
+	
+	int direction[5][2]= {{ //forward
+													0x2,0x1,},
+													//reverse
+												{ 0x1,0x2},
+													//right
+												{ 0x1,0x1},
+													//left
+												{ 0x2,0x2},
+												{0x0, 0x0}};
+	
+
 	
   TimerPeriod = (SystemCoreClock / 100 ) - 1;
   Channel1Pulse = (uint16_t) (((uint32_t) speed * (TimerPeriod - 1)) / 10);
   Channel2Pulse = (uint16_t) (((uint32_t) speed * (TimerPeriod - 1)) / 10);
+	Channel3Pulse = (uint16_t) (((uint32_t) speed * (TimerPeriod - 1)) / 100);
 
 	/* Time Base configuration */
   TIM_TimeBaseStructure.TIM_Prescaler = 0;
@@ -86,13 +90,16 @@ int motorControl(int speed,int dir){
   TIM_OCInitStructure.TIM_Pulse = Channel2Pulse;
   TIM_OC2Init(TIM1, &TIM_OCInitStructure);
 
+TIM_OCInitStructure.TIM_Pulse = Channel3Pulse;
+  TIM_OC3Init(TIM1, &TIM_OCInitStructure);
+	
 	/* TIM1 counter enable */
   TIM_Cmd(TIM1, ENABLE);
 	/* TIM1 Main Output Enable */
   TIM_CtrlPWMOutputs(TIM1, ENABLE);
 	
-	GPIOA->BSRR = direction[dir][0];
-	GPIOB->BSRR = direction[dir][1];
+	GPIOA->BSRR = 0x0;
+	GPIOB->BSRR = 0x0;
 
 	return 0;
 }
