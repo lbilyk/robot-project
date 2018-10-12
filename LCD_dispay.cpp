@@ -74,8 +74,7 @@ void LCD_sendCommand(uint8_t input)
 }
 
 void LCD_init(void)
-{
-
+{	
 	Delay(300);
 	LCD_sendCommand(0x30);
 	Delay(40);
@@ -85,7 +84,6 @@ void LCD_init(void)
 	Delay(40);
 	LCD_sendCommand(0x2);
 	Delay(40);
-	//LCD_sendCommand(0b001000);
 	LCD_sendCommand(0x28);
 	Delay(40);
 	LCD_sendCommand(0x06);
@@ -98,6 +96,14 @@ void LCD_init(void)
 
 void LCD_gpio()
 {
+	uint16_t TimerPeriod = 0;
+	GPIO_InitTypeDef GPIO_InitStructure;
+	uint16_t Channel3Pulse = 0;
+
+	TimerPeriod = (SystemCoreClock / 100 ) - 1;
+	Channel3Pulse = (uint16_t) (((uint32_t) 10 * (TimerPeriod - 1)) / 100);
+	
+
 	GPIO_InitTypeDef LCD;
 	LCD.GPIO_Pin=GPIO_Pin_4|GPIO_Pin_5|GPIO_Pin_6|GPIO_Pin_7|GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_15;
 	LCD.GPIO_Mode=GPIO_Mode_OUT;
@@ -115,7 +121,7 @@ void LCD_gpio()
   while ( (RCC->CR & (uint32_t) RCC_CR_HSIRDY) == 0 ) {;}
 	
   // Select HSI as system clock source 
-  RCC->CFGR &= (uint32_t)((uint32_t)~(RCC_CFGR_SW));
+  RCC->CFGR &= (uint32_t)((uint32_t)~(RCC_CFGR_SW)); 
   RCC->CFGR |= (uint32_t)RCC_CFGR_SW_HSI;  //01: HSI16 oscillator used as system clock
   // Wait till HSI is used as system clock source 
   while ((RCC->CFGR & (uint32_t)RCC_CFGR_SWS) == 0 ) {;}
@@ -144,13 +150,13 @@ void LCD_gpio()
 void LCD_test(void)
 {
 
-	char* test_str = "Test";
+	char* test_str = "Status:";
 	int count;
 	//for(count=0; count < strlen(test_str); count++)
 	//{
 		//LCD_sendData(test_str[count]);
 	//}
-	LCD_displaystr("TEST");
+	LCD_displaystr("Hello");
 	
 }
 

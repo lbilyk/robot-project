@@ -5,24 +5,34 @@
 int main(void)
 {
 
-	int speed =2; //at least 7
-	int direction =4; //forward:0 || reverse:1 || right:2 || left:3 || stop:4 
-		SysTickInit();
-		motorInit();
+	Direction motor_direction;
+	int speed =100; //at least 7
+	int direction =0; //forward:0 || reverse:1 || right:2 || left:3 || stop:4
 	
+	//INITIALIZE SYSTEMS
+	SysTickInit();
+	pwmInit();
+	motorInit();
+	
+	//stepperInit();
 	
 	LCD_gpio();
-		LCD_init();
+	LCD_init();
+	
 	while(1){
 
-		//motorControl(10,0);
+		//motorControl(speed,direction);
+	
 		LCD_test();
-		Delay(5000);
-	
-	
-	}
+		Delay(2000);
+		motorControl(50,0);
+		Delay(2000);
+		//	stepperControl();
+		
 
- 
+	
+
+	}
 		
 	
 
