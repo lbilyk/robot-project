@@ -9,6 +9,14 @@
 ".\objects\stm32f30x_tim.o"
 ".\objects\lcd_dispay.o"
 ".\objects\pwminit.o"
+".\objects\stepper.o"
+".\objects\limitswitches.o"
+".\objects\usartsystem.o"
+".\objects\utilities.o"
+".\objects\stm32f30x_misc.o"
+".\objects\stm32f30x_usart.o"
+".\objects\stm32f30x_exti.o"
+".\objects\ext_int.o"
 --strict --scatter ".\Objects\StarterTemplate.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

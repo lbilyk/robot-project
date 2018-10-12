@@ -67,7 +67,7 @@ int motorControl(int speed,int dir){
   TIM_OCInitStructure.TIM_OCIdleState = TIM_OCIdleState_Set;
   TIM_OCInitStructure.TIM_OCNIdleState = TIM_OCIdleState_Reset;
 
-												
+										
 	TIM_OCInitStructure.TIM_Pulse = Channel1Pulse;		
   TIM_OCInitStructure.TIM_Pulse = Channel2Pulse;		
 	TIM_OC1Init(TIM1, &TIM_OCInitStructure);

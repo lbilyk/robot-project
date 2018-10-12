@@ -39,7 +39,7 @@
 //#include "stm32f30x_dac.h"
 //#include "stm32f30x_dbgmcu.h"
 //#include "stm32f30x_dma.h"
-//#include "stm32f30x_exti.h"
+#include "stm32f30x_exti.h"
 //#include "stm32f30x_flash.h"
 //#include "stm32f30x_fmc.h"
 #include "stm32f30x_gpio.h"
@@ -53,9 +53,9 @@
 //#include "stm32f30x_rtc.h"
 //#include "stm32f30x_spi.h"
 #include "stm32f30x_tim.h"
-//#include "stm32f30x_usart.h"
+#include "stm32f30x_usart.h"
 //#include "stm32f30x_wwdg.h"
-//#include "stm32f30x_misc.h"  /* High level functions for NVIC and SysTick (add-on to CMSIS functions) */
+#include "stm32f30x_misc.h"  /* High level functions for NVIC and SysTick (add-on to CMSIS functions) */
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
