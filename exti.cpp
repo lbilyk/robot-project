@@ -1,7 +1,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f30x.h"
-#include "stm32303c_eval.h"
+
 
 /** @addtogroup STM32F30x_StdPeriph_Examples
   * @{
@@ -30,7 +30,7 @@ static void EXTI15_10_Config(void);
   * @param  None
   * @retval None
   */
-int main(void)
+int extInit(void)
 {
   /*!< At this stage the microcontroller clock setting is already configured, 
        this is done through SystemInit() function which is called from startup
@@ -40,9 +40,6 @@ int main(void)
      */
 
   /* Initialize LEDs mounted on STM32303C-EVAL board */
-  STM_EVAL_LEDInit(LED1);
-  STM_EVAL_LEDInit(LED2);
-  STM_EVAL_LEDInit(LED3);
 
   /* Configure PE6 and PD5 in interrupt mode */
   EXTI9_5_Config();
@@ -52,12 +49,8 @@ int main(void)
   
   /* Generate software interrupt: simulate a rising edge applied on EXTI5 line */
   EXTI_GenerateSWInterrupt(EXTI_Line5);
-
-  /* Infinite loop */
-  while (1)
-  {
-  }
-}
+return 1;
+} 
 
 /**
   * @brief  Configure PE6 and PD5 in interrupt mode
@@ -79,12 +72,12 @@ static void EXTI9_5_Config(void)
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6;
   GPIO_Init(GPIOE, &GPIO_InitStructure);
   
-  /* Connect EXTI5 Line to PD5 pin */
-  SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOD, EXTI_PinSource5);
-  
-  /* Connect EXTI6 Line to PE6 pin */
-  SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOE, EXTI_PinSource6);
-  
+//  /* Connect EXTI5 Line to PD5 pin */
+//  SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOD, EXTI_PinSource5);
+//  
+//  /* Connect EXTI6 Line to PE6 pin */
+//  SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOE, EXTI_PinSource6);
+//  
   /* Configure Button EXTI line */
   EXTI_InitStructure.EXTI_Line = EXTI_Line5;
   EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
@@ -123,9 +116,9 @@ static void EXTI15_10_Config(void)
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13;
   GPIO_Init(GPIOC, &GPIO_InitStructure);
   
-  /* Connect EXTI13 Line to PC13 pin */
-  SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOC, EXTI_PinSource13); 
-  
+//  /* Connect EXTI13 Line to PC13 pin */
+//  SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOC, EXTI_PinSource13); 
+//  
   /* Configure EXTI13 line */
   EXTI_InitStructure.EXTI_Line = EXTI_Line13;
   EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;

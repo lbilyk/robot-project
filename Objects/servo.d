@@ -1,4 +1,4 @@
-./objects/ext_int.o: ext_int.cpp ext_int.h stm32f30x.h \
+./objects/servo.o: servo.cpp stm32f30x.h \
   C:/Keil_v5/ARM/PACK/ARM/CMSIS/5.4.0/CMSIS/Core/Include\core_cm4.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdint.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__config \
@@ -10,4 +10,7 @@
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\arm_acle.h \
   C:/Keil_v5/ARM/PACK/ARM/CMSIS/5.4.0/CMSIS/Core/Include/mpu_armv7.h \
   system_stm32f30x.h stm32f30x_conf.h stm32f30x_exti.h stm32f30x_gpio.h \
-  stm32f30x_rcc.h stm32f30x_tim.h stm32f30x_usart.h stm32f30x_misc.h
+  stm32f30x_rcc.h stm32f30x_tim.h stm32f30x_usart.h stm32f30x_misc.h \
+  Servo.h LCD_display.h SysTick.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\string.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h

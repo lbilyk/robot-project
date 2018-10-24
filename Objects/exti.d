@@ -1,4 +1,4 @@
-./objects/ext_int.o: ext_int.cpp ext_int.h stm32f30x.h \
+./objects/exti.o: exti.cpp stm32f30x.h \
   C:/Keil_v5/ARM/PACK/ARM/CMSIS/5.4.0/CMSIS/Core/Include\core_cm4.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdint.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__config \

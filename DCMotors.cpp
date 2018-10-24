@@ -31,7 +31,7 @@ int motorControl(int speed,int dir){
   uint16_t Channel1Pulse = 0, Channel2Pulse = 0;
 	GPIO_InitTypeDef GPIO_InitStructure;
   TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
-	TIM_OCInitTypeDef  TIM_OCInitStructure;
+
 
 	int direction[5][2]= {{ //forward
 													0x2,0x1,},
