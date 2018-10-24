@@ -52,6 +52,12 @@ void stepperControl(){
 							
 						}
 					}
+					
+					if(GPIOB->IDR == 0x4){
+					
+					GPIOC->ODR &= 0xFC3F;
+						return;
+					}
 			
 				
  return;

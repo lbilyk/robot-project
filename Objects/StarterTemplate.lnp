@@ -17,6 +17,8 @@
 ".\objects\stm32f30x_usart.o"
 ".\objects\stm32f30x_exti.o"
 ".\objects\ext_int.o"
+".\objects\ssd1306.o"
+".\objects\ssd1306_fonts.o"
 --strict --scatter ".\Objects\StarterTemplate.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

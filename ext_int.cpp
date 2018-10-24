@@ -32,7 +32,6 @@ int extInit(void)
 return 0;
 }
 
-
 static void EXTI9_5_Config(void)
 {
   /* Enable the BUTTON Clock */

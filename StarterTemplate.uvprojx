@@ -566,6 +566,26 @@
               <FileType>5</FileType>
               <FilePath>.\ext_int.h</FilePath>
             </File>
+            <File>
+              <FileName>ssd1306.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\ssd1306.h</FilePath>
+            </File>
+            <File>
+              <FileName>ssd1306.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\ssd1306.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ssd1306_fonts.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\ssd1306_fonts.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ssd1306_fonts.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\ssd1306_fonts.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
