@@ -12,6 +12,7 @@
 #include "limitSwitches.h"
 #include "USARTSystem.h"
 #include "ext_int.h"
+#include "servo.h"
 
 void sendstr(uint8_t* Buffer);
 void delay(unsigned int time);

@@ -567,24 +567,14 @@
               <FilePath>.\ext_int.h</FilePath>
             </File>
             <File>
-              <FileName>ssd1306.h</FileName>
+              <FileName>servo.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\ssd1306.h</FilePath>
+              <FilePath>.\servo.h</FilePath>
             </File>
             <File>
-              <FileName>ssd1306.cpp</FileName>
+              <FileName>servo.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>.\ssd1306.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>ssd1306_fonts.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\ssd1306_fonts.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>ssd1306_fonts.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\ssd1306_fonts.h</FilePath>
+              <FilePath>.\servo.cpp</FilePath>
             </File>
           </Files>
         </Group>

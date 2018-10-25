@@ -17,17 +17,35 @@ int main(void)
 	SysTickInit();
 	pwmInit();
 	motorInit();
-	stepperInit();
-	LCD_gpio();
-	LCD_init();
-	switchInit();
-	extInit();
+	//stepperInit();
+	//LCD_gpio();
+	//LCD_init();
+//	switchInit();
+//	extInit();
+	//Servo_TimerInit();
+	//	Servo_GPIOsetup();
+	while(1){
+		
+		Servo_SetAngle(90);
+		Delay(1000);
+		Servo_SetAngle(30);
+		Delay(2000);
+		Servo_SetAngle(-90);
+		Delay(3000);
+		Servo_SetAngle(0);
+		Delay(1000);
+		Servo_SetAngle(90);
+	
+		
+	}
+	
+	
 	
 		USARTInit();
 		//USARTSend(endl);
 		//USARTSend(newl);
 		sendstr((uint8_t*)tx);
-	
+
 	while(1)
 		{
 			rxbyte = USART_R(USART1);
