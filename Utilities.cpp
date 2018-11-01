@@ -26,16 +26,16 @@ void SetLEDState(bool ON)
 	}
 }
 
-void LEDToggle()
-{
-	LEDInit();
-	if(GetLEDState())
-	{
-		SetLEDState(false);
-		return;
-	}
-	SetLEDState(true);
-}
+//void LEDToggle()
+//{
+//	LEDInit();
+//	if(GetLEDState())
+//	{
+//		SetLEDState(false);
+//		return;
+//	}
+//	SetLEDState(true);
+//}
 
 bool GetLEDState()
 {

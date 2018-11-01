@@ -7,8 +7,6 @@
 
 void USARTInit();
 void USARTSend(char);
-extern "C" { void USART2_IRQHandler(); }
-void BufferInit();
-extern volatile bool IsUSARTReady;
+unsigned char USART_R (USART_TypeDef* USARTx);
 
 #endif
