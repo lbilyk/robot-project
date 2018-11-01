@@ -19,5 +19,6 @@ void delay(unsigned int time);
 void commandselect(uint8_t* command);
 int CompareC(uint8_t* baseword, uint8_t* command);
 int argcheck (uint8_t*,const char*);
+void initializeSystems(void);
 
 #endif

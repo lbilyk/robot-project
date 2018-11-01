@@ -6,5 +6,5 @@ void LCD_PutNibble(uint8_t input);
 void LCD_sendData(uint8_t input);
 void LCD_sendCommand(uint8_t input);
 void LCD_Pulse(void);
-void LCD_test(void);
 void LCD_displaystr(char* input);
+void LCD_clearscreen(void);

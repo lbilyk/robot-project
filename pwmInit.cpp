@@ -36,7 +36,7 @@ void pwmInit(){
   GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP ;
   GPIO_Init(GPIOB, &GPIO_InitStructure);
 
-		//Servo PWM 
+	//Servo PWM 
 	GPIO_InitTypeDef servo;
 	servo.GPIO_Pin=GPIO_Pin_11;
 	servo.GPIO_Mode=GPIO_Mode_AF;
@@ -60,16 +60,10 @@ void pwmInit(){
   TIM_OCInitStructure.TIM_OCNIdleState = TIM_OCIdleState_Reset;
 
   TIM_OC3Init(TIM1, &TIM_OCInitStructure);
+	
 
 
-	//SERVO PWM INIT
-	TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
-	TIM_TimeBaseStructure.TIM_Prescaler = 0;//Sets the Prescalar of the Timer 
-  TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;//Sets counter mode to up counting mode 
-  TIM_TimeBaseStructure.TIM_Period = SystemCoreClock/20000;//Sets the timer period 
-  TIM_TimeBaseStructure.TIM_ClockDivision = 0;
-  TIM_TimeBaseStructure.TIM_RepetitionCounter = 0;
-	TIM_TimeBaseInit(TIM2, &TIM_TimeBaseStructure);//sends values to 
+
 
 	
 	

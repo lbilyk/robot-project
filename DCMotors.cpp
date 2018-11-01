@@ -1,6 +1,6 @@
 
 #include "stm32f30x.h"
-
+#include "DCmotors.h"
 
 void motorInit(){
 	GPIO_InitTypeDef GPIO_InitStructure;
@@ -19,10 +19,12 @@ void motorInit(){
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
   GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
-  GPIO_Init(GPIOB, &GPIO_InitStructure);
+	GPIO_Init(GPIOB, &GPIO_InitStructure);
+	
+	
 	
   return;
-
+	
 }
 
 int motorControl(int speed,int dir){
@@ -41,8 +43,8 @@ int motorControl(int speed,int dir){
 												{ 0x2,0x0},
 													//left
 												{ 0x0,0x1},
+												//stop
 												{0x0, 0x0}};
-	
 
 	//PWM DUTY CYCLE 
   TimerPeriod = (SystemCoreClock / 100 ) - 1;
