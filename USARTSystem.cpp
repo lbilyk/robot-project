@@ -28,7 +28,7 @@ void USARTInit()
 	GPIO_PinAFConfig(GPIOC, GPIO_PinSource5, GPIO_AF_7);
 	
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);
-	usartStruct.USART_BaudRate = 115200;   
+	usartStruct.USART_BaudRate = 9600;   
 	usartStruct.USART_WordLength = USART_WordLength_8b;  
 	usartStruct.USART_StopBits = USART_StopBits_1;   
 	usartStruct.USART_Parity = USART_Parity_No ;

@@ -1,4 +1,16 @@
 #include "main.h"
+//variable names for the commands and needed words
+	static const char* test = ".";
+	static const char* space = " ";
+	static const char* mot = "motor";
+	static const char* Left = "left";
+	static const char* Right = "right";
+	static const char* Forward = "forward";
+	static const char* Backward = "back";
+	static const char* Stop = "stop";
+	static const char* servo = "servo";
+	static const char* stepper = "stepper";
+	static const char* stop = "stop";
 
 //static void TIM_Config(void);
 int main(void)
@@ -11,192 +23,156 @@ int main(void)
 	const char* endofstr =  "\r\n";
 	const char newl = '\n';
 	const char endl = '\r';
-	int speed =100; //at least 70
-	int direction =4; //forward:0 || reverse:1 || right:2 || left:3 || stop:4
-	
 	initializeSystems();
+
+	USARTInit();
+	USARTSend(endl);
+	USARTSend(newl);
+	sendstr((uint8_t*)tx);
+
+	while(1)
+		{
+			rxbyte = USART_R(USART1);
+
+      //if the received bit is a delete key
+      if (rxbyte == '\b') {
+          //set the character that was wrong to null
+          Buffer[index - 1] = '\0';
+          //index backwards
+          index = index - 1;
+					//show the change
+					USARTSend('\b');
+      }
+
+      //if the recieved key is enter
+      else if (rxbyte == '\r' || index == 100) {
+          //adds a new line and end of string to what was sent
+					sendstr((uint8_t*)endofstr);
+					
+          //in case you want to see what was sent
+					//sendstr(Buffer);sendstr((uint8_t*)endofstr);
+					
+					//reset buffer and string index
+					commandselect(Buffer);sendstr((uint8_t*)endofstr);
+				
+					//re transmitt the command promt signal
+          sendstr((uint8_t*)tx);
+
+					index = 0;
+          memset(Buffer, 0, sizeof(Buffer));
+					
+      }
+
+      //if recived key is not special case
+      else {
+          //echo back if no conditions met
+          Buffer[index] = rxbyte;
+          //echobit[0] = rxbyte;
+					//echo back what you put in 
+					USARTSend(Buffer[index]);
+          //setting the buffer for whole word and what is echoed back
+          index++;
+		}
 	
-	motorControl(70,0);
-	Delay(1000);
-	motorControl(70,1);
-	Delay(1000);
-	motorControl(100,0);
-	Delay(1000);
-	motorControl(100,1);
-	Delay(1000);
-	motorControl(100,4);
-	Delay(1000);
-	motorControl(70,0);
-	Delay(1000);
-	motorControl(70,1);
-	Delay(1000);
-	motorControl(100,0);
-	Delay(1000);
-	motorControl(100,1);
-	Delay(1000);
-	motorControl(100,4);
+	}
 	
-	for(int i = 0; i< 22; i++)
-	stepperControl(0);
-	Servo_SetAngle(0);
-	Delay(500);
-	Servo_SetAngle(180);
-	Delay(500);
-	for(int i = 0; i< 17; i++)
-	stepperControl(1);
-	Servo_SetAngle(45);
-	Delay(500);
-	Servo_SetAngle(160);
-	Delay(500);
-	
-	Servo_SetAngle(0);
-	Delay(500);
-	Servo_SetAngle(180);
-	Delay(500);
-		motorControl(100,1);
-	Delay(1000);
-	motorControl(100,4);
-	stepperCalibrate();
-	Delay(500);
-	Servo_SetAngle(90);
-	
-	
-
-
-
-		
-
-	//	USARTInit();
-		//USARTSend(endl);
-		//USARTSend(newl);
-//		sendstr((uint8_t*)tx);
-
-//	while(1)
-//		{
-//			rxbyte = USART_R(USART1);
-
-//      //if the received bit is a delete key
-//      if (rxbyte == '\b') {
-//          //set the character that was wrong to null
-//          Buffer[index - 1] = '\0';
-//          //index backwards
-//          index = index - 1;
-//					//show the change
-//					USARTSend('\b');
-//      }
-
-//      //if the recieved key is enter
-//      else if (rxbyte == '\r' || index == 100) {
-//          //adds a new line and end of string to what was sent
-//					sendstr((uint8_t*)endofstr);
-//					
-//          //in case you want to see what was sent
-//					//sendstr(Buffer);sendstr((uint8_t*)endofstr);
-//					
-//					//reset buffer and string index
-//					commandselect(Buffer);sendstr((uint8_t*)endofstr);
-//				
-//					//re transmitt the command promt signal
-//          sendstr((uint8_t*)tx);
-
-//          
-//					index = 0;
-//          memset(Buffer, 0, sizeof(Buffer));
-//					
-//      }
-
-//      //if recived key is not special case
-//      else {
-//          //echo back if no conditions met
-//          Buffer[index] = rxbyte;
-//          //echobit[0] = rxbyte;
-//					//echo back what you put in 
-//					USARTSend(Buffer[index]);
-//          //setting the buffer for whole word and what is echoed back
-//          index++;
-//		}
-//	
-//	}
-//	
-//	return 1;
-//}
-
-//void sendstr(uint8_t* Buffer)
-//{
-//	for(int i = 0; i < (strlen((const char*)Buffer));i++)
-//	USARTSend(Buffer[i]);
-//	
-//	return;
-//}
-//void delay(unsigned int time)
-//{
-//	for(int i = 0; i < time; i++);
-//	
-//	return;
-//}
-
-
-//void commandselect(uint8_t* command)
-//{
-//	const char* pwm = "pwm";
-//	const char* test = "good to go";
-//	const char* test2 = "on";
-//	const char* test3 = "argument read";
-//	
-//	if (CompareC((uint8_t*)pwm, command) == 1)
-//		sendstr((uint8_t*)test);
-//	
-//	else if (CompareC((uint8_t*)pwm, command) == 2)
-//		if (argcheck(command,test2) == 1)
-//			sendstr((uint8_t*)test3);
-//			
-//}
-
-//int CompareC(uint8_t* baseword, uint8_t* command)
-//{
-//	//needed variable for later compairson
-//	int i;
-//	int length = (strlen((const char*)baseword));
-//	
-//	//check the letters up till the end of the string
-//	for(i = 0; i < length; i++)
-//	{
-//		if (baseword[i] != command[i] )
-//			return 0;
-//	}
-//	
-//	//check after the string if there is an argument
-//	if(command[i] == ' ')
-//		return 2;`
-//	
-//	else
-//		return 1;
-//}
-
-//int argcheck (uint8_t* cmd,const char* argch)
-//{
-//	//variable for location of space
-//	int sloc;
-//	int length = strlen((const char*)cmd);
-//	uint8_t arg[5];
-//	
-//	for(int i = 0; i < length; i++)
-//	{
-//		if (cmd[i] == ' ' )
-//			sloc = i;
-//	}
-//	
-//	if (length > (sloc + 1))
-//		{
-//			for(int j = 0; j < length; j++)
-//				{
-//					arg[j] = cmd[(sloc+1) + j]; 
-//				}
-//				if (strcmp((const char*)arg,argch) == 0)
-//					return 1;
-//		}
-//		return 0;
+	return 1;
 }
+
+void sendstr(uint8_t* Buffer)
+{
+	for(int i = 0; i < (strlen((const char*)Buffer));i++)
+	USARTSend(Buffer[i]);
+	
+	return;
+}
+void delay(unsigned int time)
+{
+	for(int i = 0; i < time; i++);
+
+	return;
+}
+
+
+void commandselect(uint8_t* command)
+{
+	char* argument;
+	
+	//w in these just stands for word version ie speedw is speed as a char
+	char* speedw;
+	int speed;
+	char* anglew;
+	int angle;
+	char* dirw;
+	int dir;
+	char* test;
+	strcpy(test,(const char*)command);
+	LCD_clearscreen();
+	
+
+	argument = strtok((char*)command,space);
+	LCD_displaystr(argument);
+	if (strcmp(argument,mot) == 0){
+			argument = strtok(NULL,space);// grabs argument
+			LCD_displaystr(argument);
+			speedw = strtok(NULL,space);//grabs the speed value
+			LCD_displaystr(speedw);
+			speed = atoi(speedw);//converts a given speed value to a value the board can read
+			if (speed < 70) speed = 70; //sets the limit of lowest speed to 70 to avoid motor not running 
+		
+		//checks for the direction
+				if(strcmp(argument,Forward) == 0)
+					if (speed == NULL)
+					motorControl(100,0);
+				else
+						motorControl(speed,0);
+				else if(strcmp(argument,Left) == 0)
+					motorControl(100,3);
+				else if(strcmp(argument,Right) == 0)
+					motorControl(100,2);
+				else if(strcmp(argument,Backward) == 0)
+					motorControl(100,1);
+				else if(strcmp(argument,Stop) == 0)
+					motorControl(100,4);
+	}
+	else if (strcmp(argument,servo) == 0){
+		anglew = strtok(NULL,space);//grabs the speed value
+		LCD_displaystr(anglew);
+		angle = atoi(anglew);//converts a given speed value to a value the board can read
+		if (angle > 180 ||angle < 0)
+			angle = 90;
+		Servo_SetAngle(angle);
+	}
+	else if (strcmp(argument,stepper) == 0)
+	{
+		dirw = strtok(NULL,space);//grabs the speed value
+		dir = atoi(dirw);//converts a given dir value to a value the board can read
+		LCD_displaystr(dirw);
+		//loops if value is greater then 1 or less then 0
+		if (dir > 1)
+			{
+			for (int i =0; i < dir ;i++)
+				stepperControl(1);
+			dir = 1;
+			}
+		else if (dir < 0)
+			{
+			for (int i =0; i > dir ;i--)
+				stepperControl(0);
+			}
+			else{
+				stepperControl(dir);
+			}
+	}
+	else if (strcmp(argument,stop) == 0)
+	{
+		motorControl(100,4);
+		Servo_SetAngle(90);
+	}
+
+	
+}
+
 void initializeSystems(void){
 
 char* test;
@@ -216,10 +192,6 @@ char* test;
 	
 	stepperCalibrate();
 	Servo_SetAngle(90);
-
-
-
-
 	
 	return;
 	
